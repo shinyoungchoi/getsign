@@ -13,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin {
+  final GlobalKey<FormState> formKey = GlobalKey();
   late AnimationController _controller;
 
   @override
@@ -29,6 +30,17 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text("login"));
+    return Scaffold(body: loginForm());
+  }
+
+  Form loginForm() {
+    return Form(
+      key: formKey,
+      child: Container(
+        child: Row(
+          children: [],
+        ),
+      ),
+    );
   }
 }
